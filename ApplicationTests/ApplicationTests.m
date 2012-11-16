@@ -37,4 +37,9 @@
     STAssertNotNil(self.vc, @"Expected view controller not nil.");
 }
 
+
+- (void)testMapViewIsNotNil {
+    STAssertNotNil([self.vc mapView], @"Expected map view not nil.");
+}
+
 @end
