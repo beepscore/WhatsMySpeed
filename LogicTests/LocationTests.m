@@ -11,16 +11,15 @@
 
 @implementation LocationTests
 
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
     
     // Set-up code here.
     self.location = [[Location alloc] init];
 }
 
-- (void)tearDown
-{
+
+- (void)tearDown {
     // Tear-down code here.
     self.location = nil;
     
