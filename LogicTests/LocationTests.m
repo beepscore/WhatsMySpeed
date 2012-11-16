@@ -27,6 +27,19 @@
 }
 
 
+- (void)testInit {
+    STAssertNotNil(self.location, @"Expected self.location not nil.");
+}
+
+
+- (void)testThatInitSetsLocationManager {
+    STAssertNotNil(self.location.locationManager,
+                   @"Expected self.location.locationManager not nil.");
+    STAssertTrue([self.location.locationManager  isKindOfClass:[CLLocationManager class]],
+                   @"Expected self.location.locationManager is CLLocationManager.");
+}
+
+
 - (void)testCalculateSpeedInMPH {
     
     double kMetersPerMile = 1609.344;
@@ -39,11 +52,6 @@
                                actualSpeedMPH,
                                0.1,
                                @"Expected %f but got %f", expectedSpeedMPH, actualSpeedMPH);
-}
-
-
-- (void)testInit {
-    STAssertNotNil(self.location, @"Expected self.location not nil.");
 }
 
 @end
