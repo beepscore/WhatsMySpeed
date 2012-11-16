@@ -1,14 +1,14 @@
 //
-//  WhatsMySpeedTests.m
-//  WhatsMySpeedTests
+//  ApplicationTests.m
+//  ApplicationTests
 //
 //  Created by Steve Baker on 11/15/12.
 //  Copyright (c) 2012 Beepscore LLC. All rights reserved.
 //
 
-#import "WhatsMySpeedTests.h"
+#import "ApplicationTests.h"
 
-@implementation WhatsMySpeedTests
+@implementation ApplicationTests
 
 - (void)setUp
 {
