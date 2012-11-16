@@ -23,6 +23,7 @@
 		DE14037E1656062800B10232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
 		DE1403861656062800B10232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE1403841656062800B10232 /* InfoPlist.strings */; };
 		DE1403891656062800B10232 /* WhatsMySpeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1403881656062800B10232 /* WhatsMySpeedTests.m */; };
+		DE1403931656090600B10232 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE1403921656090600B10232 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		DE1403851656062800B10232 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE1403871656062800B10232 /* WhatsMySpeedTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhatsMySpeedTests.h; sourceTree = "<group>"; };
 		DE1403881656062800B10232 /* WhatsMySpeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhatsMySpeedTests.m; sourceTree = "<group>"; };
+		DE1403921656090600B10232 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		DE1403481656062800B10232 = {
 			isa = PBXGroup;
 			children = (
+				DE1403921656090600B10232 /* README.md */,
 				DE14035D1656062800B10232 /* WhatsMySpeed */,
 				DE1403811656062800B10232 /* WhatsMySpeedTests */,
 				DE1403561656062800B10232 /* Frameworks */,
@@ -236,6 +239,7 @@
 				DE14036C1656062800B10232 /* Default@2x.png in Resources */,
 				DE14036E1656062800B10232 /* Default-568h@2x.png in Resources */,
 				DE1403711656062800B10232 /* MainStoryboard.storyboard in Resources */,
+				DE1403931656090600B10232 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
