@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Location;
 
 @interface ViewController : UIViewController
+
+@property (nonatomic, strong) Location *location;
 
 @end

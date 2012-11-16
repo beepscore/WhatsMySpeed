@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Location.h"
 
 @interface ViewController ()
 
@@ -18,12 +19,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.location = [[Location alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    self.location = nil;
 }
 
 @end
