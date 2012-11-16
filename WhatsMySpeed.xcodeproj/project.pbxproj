@@ -33,6 +33,7 @@
 		DEFAA65F16562D75002D1AD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
 		DEFAA66516562D75002D1AD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEFAA66316562D75002D1AD0 /* InfoPlist.strings */; };
 		DEFAA66816562D75002D1AD0 /* LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFAA66716562D75002D1AD0 /* LocationTests.m */; };
+		DEFCFCBA1656F54C001D52BD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFCB91656F54C001D52BD /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		DEFAA66616562D75002D1AD0 /* LocationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationTests.h; sourceTree = "<group>"; };
 		DEFAA66716562D75002D1AD0 /* LocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTests.m; sourceTree = "<group>"; };
 		DEFAA66916562D75002D1AD0 /* LogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LogicTests-Prefix.pch"; sourceTree = "<group>"; };
+		DEFCFCB91656F54C001D52BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFCFCBA1656F54C001D52BD /* MapKit.framework in Frameworks */,
 				DEC202B71656AFF600B42005 /* CoreLocation.framework in Frameworks */,
 				DE1403581656062800B10232 /* UIKit.framework in Frameworks */,
 				DE14035A1656062800B10232 /* Foundation.framework in Frameworks */,
@@ -150,6 +153,7 @@
 		DE1403561656062800B10232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEFCFCB91656F54C001D52BD /* MapKit.framework */,
 				DEC202B61656AFF600B42005 /* CoreLocation.framework */,
 				DE1403571656062800B10232 /* UIKit.framework */,
 				DE1403591656062800B10232 /* Foundation.framework */,
