@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+@class Location;
 
 @interface LocationTests : SenTestCase
+
+@property (nonatomic, strong) Location *location;
 
 @end

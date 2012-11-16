@@ -7,6 +7,7 @@
 //
 
 #import "LocationTests.h"
+#import "Location.h"
 
 @implementation LocationTests
 
@@ -15,11 +16,13 @@
     [super setUp];
     
     // Set-up code here.
+    self.location = [[Location alloc] init];
 }
 
 - (void)tearDown
 {
     // Tear-down code here.
+    self.location = nil;
     
     [super tearDown];
 }
