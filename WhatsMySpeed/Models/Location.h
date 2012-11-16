@@ -25,7 +25,7 @@
  \brief CLLocation speed units are meters per second.
  Name this property with units for clarity.
  */
-@property (assign) CLLocationSpeed speedMilesPerHour;
+@property (assign) float speedMilesPerHour;
 
 
 /** Expose a method to start location updates.
@@ -35,6 +35,6 @@
  */
 - (void)startLocationUpdates;
 
-- (CLLocationSpeed)calculateSpeedInMPH:(CLLocationSpeed)speedInMetersPerSecond;
+- (float)calculateSpeedInMPH:(CLLocationSpeed)speedInMetersPerSecond;
 
 @end

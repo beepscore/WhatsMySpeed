@@ -33,8 +33,9 @@
 
 #pragma mark - Helper methods
 
-- (CLLocationSpeed)calculateSpeedInMPH:(CLLocationSpeed)speedInMetersPerSecond {
-    CLLocationSpeed speedInMetersPerHour = 60. * 60. * speedInMetersPerSecond;
+- (float)calculateSpeedInMPH:(CLLocationSpeed)speedInMetersPerSecond {
+    NSInteger kSecondsPerHour = 60 * 60;
+    CLLocationSpeed speedInMetersPerHour = kSecondsPerHour * speedInMetersPerSecond;
     double kMetersPerMile = 1609.344;
     return (speedInMetersPerHour / kMetersPerMile);
 }
