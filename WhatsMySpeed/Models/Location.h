@@ -6,8 +6,35 @@
 //  Copyright (c) 2012 Beepscore LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+/**
+ \brief Location wraps CLLocationManager in order to
+ separate concerns and simplify unit testing.
+ Unit tests can mock Location.
+ 
+ Based on Location by Ron Lisle, copyright Lynda.com
+ */
 
-@interface Location : NSObject
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+
+@interface Location : NSObject <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+
+/**
+ \brief CLLocation speed units are meters per second.
+ Name this property with units for clarity.
+ */
+@property (assign) CLLocationSpeed speedMilesPerHour;
+
+
+/** Expose a method to start location updates.
+ Unit test can call this method.
+ Class could start location updates in init without exposing method,
+ but this would make unit testing more difficult.
+ */
+- (void)startLocationUpdates;
+
+- (CLLocationSpeed)calculateSpeedInMPH:(CLLocationSpeed)speedInMetersPerSecond;
 
 @end
