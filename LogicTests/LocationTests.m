@@ -1,14 +1,14 @@
 //
-//  LogicTests.m
-//  LogicTests
+//  LocationTests.m
+//  LocationTests
 //
 //  Created by Steve Baker on 11/16/12.
 //  Copyright (c) 2012 Beepscore LLC. All rights reserved.
 //
 
-#import "LogicTests.h"
+#import "LocationTests.h"
 
-@implementation LogicTests
+@implementation LocationTests
 
 - (void)setUp
 {

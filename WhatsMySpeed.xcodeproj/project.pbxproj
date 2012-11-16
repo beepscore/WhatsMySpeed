@@ -32,7 +32,7 @@
 		DEFAA65E16562D75002D1AD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403571656062800B10232 /* UIKit.framework */; };
 		DEFAA65F16562D75002D1AD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
 		DEFAA66516562D75002D1AD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEFAA66316562D75002D1AD0 /* InfoPlist.strings */; };
-		DEFAA66816562D75002D1AD0 /* LogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFAA66716562D75002D1AD0 /* LogicTests.m */; };
+		DEFAA66816562D75002D1AD0 /* LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFAA66716562D75002D1AD0 /* LocationTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +75,8 @@
 		DEFAA65C16562D75002D1AD0 /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFAA66216562D75002D1AD0 /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		DEFAA66416562D75002D1AD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DEFAA66616562D75002D1AD0 /* LogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogicTests.h; sourceTree = "<group>"; };
-		DEFAA66716562D75002D1AD0 /* LogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogicTests.m; sourceTree = "<group>"; };
+		DEFAA66616562D75002D1AD0 /* LocationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationTests.h; sourceTree = "<group>"; };
+		DEFAA66716562D75002D1AD0 /* LocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTests.m; sourceTree = "<group>"; };
 		DEFAA66916562D75002D1AD0 /* LogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LogicTests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,8 +217,8 @@
 		DEFAA66016562D75002D1AD0 /* LogicTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEFAA66616562D75002D1AD0 /* LogicTests.h */,
-				DEFAA66716562D75002D1AD0 /* LogicTests.m */,
+				DEFAA66616562D75002D1AD0 /* LocationTests.h */,
+				DEFAA66716562D75002D1AD0 /* LocationTests.m */,
 				DEFAA66116562D75002D1AD0 /* Supporting Files */,
 			);
 			path = LogicTests;
@@ -404,7 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEFAA66816562D75002D1AD0 /* LogicTests.m in Sources */,
+				DEFAA66816562D75002D1AD0 /* LocationTests.m in Sources */,
 				DE5CCC7D16569D2500BD45C7 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
