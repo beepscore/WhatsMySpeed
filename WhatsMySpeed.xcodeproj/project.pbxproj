@@ -26,6 +26,8 @@
 		DE1403931656090600B10232 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE1403921656090600B10232 /* README.md */; };
 		DE5CCC7C16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
 		DE5CCC7D16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
+		DEC202B71656AFF600B42005 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC202B61656AFF600B42005 /* CoreLocation.framework */; };
+		DEC202B91656B03600B42005 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC202B61656AFF600B42005 /* CoreLocation.framework */; };
 		DEFAA65D16562D75002D1AD0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE14037B1656062800B10232 /* SenTestingKit.framework */; };
 		DEFAA65E16562D75002D1AD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403571656062800B10232 /* UIKit.framework */; };
 		DEFAA65F16562D75002D1AD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
@@ -69,6 +71,7 @@
 		DE1403921656090600B10232 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		DE5CCC7A16569D2500BD45C7 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
 		DE5CCC7B16569D2500BD45C7 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
+		DEC202B61656AFF600B42005 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DEFAA65C16562D75002D1AD0 /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFAA66216562D75002D1AD0 /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		DEFAA66416562D75002D1AD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC202B71656AFF600B42005 /* CoreLocation.framework in Frameworks */,
 				DE1403581656062800B10232 /* UIKit.framework in Frameworks */,
 				DE14035A1656062800B10232 /* Foundation.framework in Frameworks */,
 				DE14035C1656062800B10232 /* CoreGraphics.framework in Frameworks */,
@@ -105,6 +109,7 @@
 				DEFAA65D16562D75002D1AD0 /* SenTestingKit.framework in Frameworks */,
 				DEFAA65E16562D75002D1AD0 /* UIKit.framework in Frameworks */,
 				DEFAA65F16562D75002D1AD0 /* Foundation.framework in Frameworks */,
+				DEC202B91656B03600B42005 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +150,7 @@
 		DE1403561656062800B10232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEC202B61656AFF600B42005 /* CoreLocation.framework */,
 				DE1403571656062800B10232 /* UIKit.framework */,
 				DE1403591656062800B10232 /* Foundation.framework */,
 				DE14035B1656062800B10232 /* CoreGraphics.framework */,
