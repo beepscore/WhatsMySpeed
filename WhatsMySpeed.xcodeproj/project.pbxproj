@@ -79,6 +79,7 @@
 		DEFAA66616562D75002D1AD0 /* LocationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationTests.h; sourceTree = "<group>"; };
 		DEFAA66716562D75002D1AD0 /* LocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTests.m; sourceTree = "<group>"; };
 		DEFAA66916562D75002D1AD0 /* LogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LogicTests-Prefix.pch"; sourceTree = "<group>"; };
+		DEFCC7E41656F9D9004A304C /* ViewController_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController_Extension.h; sourceTree = "<group>"; };
 		DEFCFCB91656F54C001D52BD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -123,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1403721656062800B10232 /* ViewController.h */,
+				DEFCC7E41656F9D9004A304C /* ViewController_Extension.h */,
 				DE1403731656062800B10232 /* ViewController.m */,
 			);
 			name = ViewControllers;

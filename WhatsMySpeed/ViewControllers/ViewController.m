@@ -7,11 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "ViewController_Extension.h"
 #import "Location.h"
-
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 

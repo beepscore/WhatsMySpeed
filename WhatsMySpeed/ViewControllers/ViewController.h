@@ -12,8 +12,6 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet MKMapView *mapView;
-
 @property (nonatomic, strong) Location *location;
 
 @end

@@ -9,6 +9,7 @@
 #import "ApplicationTests.h"
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "ViewController_Extension.h"
 
 @implementation ApplicationTests
 
