@@ -41,4 +41,9 @@
                                @"Expected %f but got %f", expectedSpeedMPH, actualSpeedMPH);
 }
 
+
+- (void)testInit {
+    STAssertNotNil(self.location, @"Expected self.location not nil.");
+}
+
 @end
