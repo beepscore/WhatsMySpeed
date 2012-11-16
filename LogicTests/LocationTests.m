@@ -26,9 +26,19 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in LogicTests");
+
+- (void)testCalculateSpeedInMPH {
+    
+    double kMetersPerMile = 1609.344;
+    NSInteger kSecondsPerHour = 60 * 60;
+    CLLocationSpeed speedMetersPerSecond = ((55.0 * kMetersPerMile) / kSecondsPerHour);
+    
+    float actualSpeedMPH = [self.location calculateSpeedInMPH:speedMetersPerSecond];
+    float expectedSpeedMPH = 55.0;
+    STAssertEqualsWithAccuracy(expectedSpeedMPH,
+                               actualSpeedMPH,
+                               0.1,
+                               @"Expected %f but got %f", expectedSpeedMPH, actualSpeedMPH);
 }
 
 @end
