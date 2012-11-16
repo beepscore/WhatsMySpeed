@@ -7,26 +7,34 @@
 //
 
 #import "ApplicationTests.h"
+#import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation ApplicationTests
 
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
     
     // Set-up code here.
+    // In application tests the application bundle is loaded before the tests are run.
+    // Test setUp doesn't need to instantiate objects from application, just reference them.
+    UIApplication *application = [UIApplication sharedApplication];
+    AppDelegate *appDelegate = [application delegate];
+    UIWindow *window = [appDelegate window];
+    self.vc = (ViewController*)[window rootViewController];
 }
 
-- (void)tearDown
-{
+
+- (void)tearDown {
     // Tear-down code here.
+    self.vc = nil;
     
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in WhatsMySpeedTests");
+
+- (void)testViewControllerIsNotNil {
+    STAssertNotNil(self.vc, @"Expected view controller not nil.");
 }
 
 @end

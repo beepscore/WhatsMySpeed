@@ -7,7 +7,11 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+@class AppDelegate;
+@class ViewController;
 
 @interface ApplicationTests : SenTestCase
+
+@property (nonatomic, weak) ViewController *vc;
 
 @end
