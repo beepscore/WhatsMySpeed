@@ -24,6 +24,8 @@
 		DE1403861656062800B10232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE1403841656062800B10232 /* InfoPlist.strings */; };
 		DE1403891656062800B10232 /* ApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1403881656062800B10232 /* ApplicationTests.m */; };
 		DE1403931656090600B10232 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE1403921656090600B10232 /* README.md */; };
+		DE5CCC7C16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
+		DE5CCC7D16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
 		DEFAA65D16562D75002D1AD0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE14037B1656062800B10232 /* SenTestingKit.framework */; };
 		DEFAA65E16562D75002D1AD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403571656062800B10232 /* UIKit.framework */; };
 		DEFAA65F16562D75002D1AD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
@@ -65,6 +67,8 @@
 		DE1403871656062800B10232 /* ApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationTests.h; sourceTree = "<group>"; };
 		DE1403881656062800B10232 /* ApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationTests.m; sourceTree = "<group>"; };
 		DE1403921656090600B10232 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		DE5CCC7A16569D2500BD45C7 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		DE5CCC7B16569D2500BD45C7 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		DEFAA65C16562D75002D1AD0 /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFAA66216562D75002D1AD0 /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
 		DEFAA66416562D75002D1AD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		DE14035D1656062800B10232 /* WhatsMySpeed */ = {
 			isa = PBXGroup;
 			children = (
+				DE5CCC7816569CB700BD45C7 /* Models */,
 				DE1403661656062800B10232 /* AppDelegate.h */,
 				DE1403671656062800B10232 /* AppDelegate.m */,
 				DE14036F1656062800B10232 /* MainStoryboard.storyboard */,
@@ -184,6 +189,15 @@
 				DE1403841656062800B10232 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE5CCC7816569CB700BD45C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE5CCC7A16569D2500BD45C7 /* Location.h */,
+				DE5CCC7B16569D2500BD45C7 /* Location.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		DEFAA66016562D75002D1AD0 /* LogicTests */ = {
@@ -360,6 +374,7 @@
 				DE1403641656062800B10232 /* main.m in Sources */,
 				DE1403681656062800B10232 /* AppDelegate.m in Sources */,
 				DE1403741656062800B10232 /* ViewController.m in Sources */,
+				DE5CCC7C16569D2500BD45C7 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFAA66816562D75002D1AD0 /* LogicTests.m in Sources */,
+				DE5CCC7D16569D2500BD45C7 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +614,7 @@
 				DEFAA66B16562D75002D1AD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
