@@ -49,4 +49,10 @@
                  @"Expected map view shows user location.");
 }
 
+
+- (void)testMapTrackingModeFollow {
+    STAssertTrue( (MKUserTrackingModeFollow == [[self.vc mapView] userTrackingMode]),
+                 @"Expected map view tacking mode follow.");
+}
+
 @end
