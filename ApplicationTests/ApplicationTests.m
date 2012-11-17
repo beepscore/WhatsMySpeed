@@ -43,4 +43,10 @@
     STAssertNotNil([self.vc mapView], @"Expected map view not nil.");
 }
 
+
+- (void)testMapShowsUserLocation {
+    STAssertTrue([[self.vc mapView] showsUserLocation],
+                 @"Expected map view shows user location.");
+}
+
 @end
