@@ -35,6 +35,7 @@
     // Run after each test method
 }
 
+
 - (void)testObjects {
     // NSString *a = @"foo";
     NSString *a = @"a string";
@@ -47,6 +48,13 @@
     // NSString *b = @"bar";
     NSString *b = @"a string";
     GHAssertEqualObjects(a, b, @"A custom error message. a should be equal to: %@.", b);
+}
+
+
+- (void)testEqualStrings {
+    // If last argument is nil, GHAssert provides a useful message showing expected and actual values.
+    // STAssert's message for nil isn't as nice.
+    GHAssertEqualStrings(@"abc", @"ABC", nil);
 }
 
 @end
