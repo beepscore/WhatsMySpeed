@@ -38,6 +38,10 @@
 		DE7D7458165950270097252D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7D7457165950270097252D /* Default-568h@2x.png */; };
 		DEC202B71656AFF600B42005 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC202B61656AFF600B42005 /* CoreLocation.framework */; };
 		DEC202B91656B03600B42005 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC202B61656AFF600B42005 /* CoreLocation.framework */; };
+		DEEED9A51659626F008C807D /* LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFAA66716562D75002D1AD0 /* LocationTests.m */; };
+		DEEED9A716596278008C807D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE14037B1656062800B10232 /* SenTestingKit.framework */; };
+		DEEED9A8165962AD008C807D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC202B61656AFF600B42005 /* CoreLocation.framework */; };
+		DEEED9A9165962C7008C807D /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
 		DEFAA65D16562D75002D1AD0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE14037B1656062800B10232 /* SenTestingKit.framework */; };
 		DEFAA65E16562D75002D1AD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403571656062800B10232 /* UIKit.framework */; };
 		DEFAA65F16562D75002D1AD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
@@ -135,6 +139,8 @@
 				DE7D7445165950270097252D /* Foundation.framework in Frameworks */,
 				DE7D7446165950270097252D /* CoreGraphics.framework in Frameworks */,
 				DE0B074B1659532000301BBA /* GHUnitIOS.framework in Frameworks */,
+				DEEED9A716596278008C807D /* SenTestingKit.framework in Frameworks */,
+				DEEED9A8165962AD008C807D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +504,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7D744E165950270097252D /* main.m in Sources */,
+				DEEED9A51659626F008C807D /* LocationTests.m in Sources */,
+				DEEED9A9165962C7008C807D /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,7 +684,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnitTests/GHUnitTests-Prefix.pch";
@@ -696,7 +707,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnitTests/GHUnitTests-Prefix.pch";
