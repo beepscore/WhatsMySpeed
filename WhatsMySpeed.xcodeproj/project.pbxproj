@@ -165,7 +165,6 @@
 		DE1403481656062800B10232 = {
 			isa = PBXGroup;
 			children = (
-				DE41CDCC1659596400891483 /* QuartzCore.framework */,
 				DE1403921656090600B10232 /* README.md */,
 				DE14035D1656062800B10232 /* WhatsMySpeed */,
 				DE1403811656062800B10232 /* ApplicationTests */,
@@ -190,6 +189,7 @@
 		DE1403561656062800B10232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE41CDCC1659596400891483 /* QuartzCore.framework */,
 				DE0B074A1659532000301BBA /* GHUnitIOS.framework */,
 				DEFCFCB91656F54C001D52BD /* MapKit.framework */,
 				DEC202B61656AFF600B42005 /* CoreLocation.framework */,
