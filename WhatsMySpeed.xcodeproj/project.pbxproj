@@ -26,6 +26,7 @@
 		DE1403891656062800B10232 /* ApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1403881656062800B10232 /* ApplicationTests.m */; };
 		DE1403931656090600B10232 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE1403921656090600B10232 /* README.md */; };
 		DE41CDCD1659596400891483 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE41CDCC1659596400891483 /* QuartzCore.framework */; };
+		DE49E3D816596B4D006D6ABA /* LocationGHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49E3D716596B4D006D6ABA /* LocationGHTests.m */; };
 		DE5CCC7C16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
 		DE5CCC7D16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
 		DE7D7444165950270097252D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403571656062800B10232 /* UIKit.framework */; };
@@ -86,6 +87,7 @@
 		DE1403881656062800B10232 /* ApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationTests.m; sourceTree = "<group>"; };
 		DE1403921656090600B10232 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		DE41CDCC1659596400891483 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DE49E3D716596B4D006D6ABA /* LocationGHTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationGHTests.m; sourceTree = "<group>"; };
 		DE5CCC7A16569D2500BD45C7 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
 		DE5CCC7B16569D2500BD45C7 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
 		DE7D7442165950270097252D /* GHUnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7D7448165950270097252D /* Supporting Files */,
+				DE49E3D716596B4D006D6ABA /* LocationGHTests.m */,
 			);
 			path = GHUnitTests;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				DE7D744E165950270097252D /* main.m in Sources */,
 				DEEED9A51659626F008C807D /* LocationTests.m in Sources */,
 				DEEED9A9165962C7008C807D /* Location.m in Sources */,
+				DE49E3D816596B4D006D6ABA /* LocationGHTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
