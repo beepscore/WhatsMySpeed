@@ -11,21 +11,23 @@
 
 #import <GHUnitIOS/GHUnit.h>
 
-@interface WeatherAPITests : GHAsyncTestCase { }
+@interface WeatherAPITests : GHAsyncTestCase
+// store response so we can test it
+@property (nonatomic, strong) NSString *APIResponse;
 @end
 
 
 @implementation WeatherAPITests
 
-- (void)testURLConnection {
+- (void)testWeatherAPI {
     
     // Call prepare to setup the asynchronous action.
     // This helps in cases where the action is synchronous and the
     // action occurs before the wait is actually called.
     [self prepare];
     
-    NSURLRequest *request = [NSURLRequest
-                             requestWithURL:[NSURL URLWithString:@"http://www.google.com"]];
+    NSURL *weatherURL = [NSURL URLWithString:@"http://www.google.com/ig/api?weather=98053"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:weatherURL];
     
     // FIXME: Xcode warns variable connection unused.
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request
@@ -43,7 +45,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // Notify of success, specifying the method where wait is called.
     // This prevents stray notifies from affecting other tests.
-    [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testURLConnection)];
+    [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testWeatherAPI)];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -52,7 +54,8 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    GHTestLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    self.APIResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    GHTestLog(@"%@", self.APIResponse);
 }
 
 @end
