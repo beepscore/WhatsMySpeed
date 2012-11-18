@@ -50,7 +50,7 @@
     float expectedSpeedMPH = 55.0;
     STAssertEqualsWithAccuracy(expectedSpeedMPH,
                                actualSpeedMPH,
-                               0.1,
+                               0.001,
                                @"Expected %f but got %f", expectedSpeedMPH, actualSpeedMPH);
 }
 
