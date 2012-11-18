@@ -38,6 +38,11 @@
     // If notify is not called with kGHUnitWaitStatusSuccess then
     // we will throw an error.
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
+    
+    // To keep test simple, don't parse xml response, just use rangeOfString:
+    NSString *expectedResponse = @"<h1>We're sorry...</h1><p>... but your computer or network may be sending automated queries. To protect our users, we can't process your request right now.";
+    GHAssertTrue((NSNotFound != [self.APIResponse rangeOfString:expectedResponse].location),
+                 @"Expected %@", expectedResponse);
 }
 
 # pragma mark - Event handlers
