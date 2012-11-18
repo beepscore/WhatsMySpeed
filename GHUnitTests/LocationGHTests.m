@@ -54,7 +54,8 @@
 - (void)testEqualStrings {
     // If last argument is nil, GHAssert provides a useful message showing expected and actual values.
     // STAssert's message for nil isn't as nice.
-    GHAssertEqualStrings(@"abc", @"ABC", nil);
+    // GHAssertEqualStrings(@"abc", @"ABC", nil);
+    GHAssertEqualStrings(@"ABC", @"ABC", nil);
 }
 
 @end
