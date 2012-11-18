@@ -38,6 +38,7 @@
 		DE7D7454165950270097252D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7D7453165950270097252D /* Default.png */; };
 		DE7D7456165950270097252D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7D7455165950270097252D /* Default@2x.png */; };
 		DE7D7458165950270097252D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7D7457165950270097252D /* Default-568h@2x.png */; };
+		DEAF5D8A1659A14A0063D223 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEAF5D891659A14A0063D223 /* libOCMock.a */; };
 		DEC202B71656AFF600B42005 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC202B61656AFF600B42005 /* CoreLocation.framework */; };
 		DEC202B91656B03600B42005 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC202B61656AFF600B42005 /* CoreLocation.framework */; };
 		DEEED9A51659626F008C807D /* LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFAA66716562D75002D1AD0 /* LocationTests.m */; };
@@ -100,6 +101,7 @@
 		DE7D7453165950270097252D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DE7D7455165950270097252D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DE7D7457165950270097252D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DEAF5D891659A14A0063D223 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OCMockiOS/libOCMock.a; sourceTree = "<group>"; };
 		DEC202B61656AFF600B42005 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DEFAA65C16562D75002D1AD0 /* LogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFAA66216562D75002D1AD0 /* LogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTests-Info.plist"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAF5D8A1659A14A0063D223 /* libOCMock.a in Frameworks */,
 				DEFAA65D16562D75002D1AD0 /* SenTestingKit.framework in Frameworks */,
 				DEFAA65E16562D75002D1AD0 /* UIKit.framework in Frameworks */,
 				DEFAA65F16562D75002D1AD0 /* Foundation.framework in Frameworks */,
@@ -199,6 +202,7 @@
 		DE1403561656062800B10232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEAF5D891659A14A0063D223 /* libOCMock.a */,
 				DE41CDCC1659596400891483 /* QuartzCore.framework */,
 				DE0B074A1659532000301BBA /* GHUnitIOS.framework */,
 				DEFCFCB91656F54C001D52BD /* MapKit.framework */,
@@ -741,7 +745,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LogicTests/LogicTests-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OCMockiOS/OCMock";
 				INFOPLIST_FILE = "LogicTests/LogicTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OCMockiOS\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -756,7 +769,16 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LogicTests/LogicTests-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OCMockiOS/OCMock";
 				INFOPLIST_FILE = "LogicTests/LogicTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/OCMockiOS\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
