@@ -35,7 +35,7 @@
     // Run after each test method
 }
 
-- (void)testFoo {
+- (void)testObjects {
     // NSString *a = @"foo";
     NSString *a = @"a string";
     GHTestLog(@"I can log to the GHUnit test console: %@", a);
@@ -47,10 +47,6 @@
     // NSString *b = @"bar";
     NSString *b = @"a string";
     GHAssertEqualObjects(a, b, @"A custom error message. a should be equal to: %@.", b);
-}
-
-- (void)testBar {
-    // Another test
 }
 
 @end
