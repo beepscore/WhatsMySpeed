@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0B074B1659532000301BBA /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0B074A1659532000301BBA /* GHUnitIOS.framework */; };
 		DE1403581656062800B10232 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403571656062800B10232 /* UIKit.framework */; };
 		DE14035A1656062800B10232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
 		DE14035C1656062800B10232 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE14035B1656062800B10232 /* CoreGraphics.framework */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE0B074A1659532000301BBA /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 		DE1403531656062800B10232 /* WhatsMySpeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsMySpeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1403571656062800B10232 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE1403591656062800B10232 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -132,6 +134,7 @@
 				DE7D7444165950270097252D /* UIKit.framework in Frameworks */,
 				DE7D7445165950270097252D /* Foundation.framework in Frameworks */,
 				DE7D7446165950270097252D /* CoreGraphics.framework in Frameworks */,
+				DE0B074B1659532000301BBA /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +189,7 @@
 		DE1403561656062800B10232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE0B074A1659532000301BBA /* GHUnitIOS.framework */,
 				DEFCFCB91656F54C001D52BD /* MapKit.framework */,
 				DEC202B61656AFF600B42005 /* CoreLocation.framework */,
 				DE1403571656062800B10232 /* UIKit.framework */,
@@ -672,6 +676,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnitTests/GHUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "GHUnitTests/GHUnitTests-Info.plist";
@@ -684,6 +692,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnitTests/GHUnitTests-Prefix.pch";
 				INFOPLIST_FILE = "GHUnitTests/GHUnitTests-Info.plist";
@@ -759,6 +771,7 @@
 				DE7D745A165950270097252D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEFAA66C16562D75002D1AD0 /* Build configuration list for PBXNativeTarget "LogicTests" */ = {
 			isa = XCConfigurationList;
