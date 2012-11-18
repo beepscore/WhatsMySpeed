@@ -32,7 +32,6 @@
 		DE7D7446165950270097252D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE14035B1656062800B10232 /* CoreGraphics.framework */; };
 		DE7D744C165950270097252D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE7D744A165950270097252D /* InfoPlist.strings */; };
 		DE7D744E165950270097252D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7D744D165950270097252D /* main.m */; };
-		DE7D7452165950270097252D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7D7451165950270097252D /* AppDelegate.m */; };
 		DE7D7454165950270097252D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7D7453165950270097252D /* Default.png */; };
 		DE7D7456165950270097252D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7D7455165950270097252D /* Default@2x.png */; };
 		DE7D7458165950270097252D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7D7457165950270097252D /* Default-568h@2x.png */; };
@@ -88,8 +87,6 @@
 		DE7D744B165950270097252D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE7D744D165950270097252D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DE7D744F165950270097252D /* GHUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GHUnitTests-Prefix.pch"; sourceTree = "<group>"; };
-		DE7D7450165950270097252D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		DE7D7451165950270097252D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE7D7453165950270097252D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		DE7D7455165950270097252D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		DE7D7457165950270097252D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -258,8 +255,6 @@
 		DE7D7447165950270097252D /* GHUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE7D7450165950270097252D /* AppDelegate.h */,
-				DE7D7451165950270097252D /* AppDelegate.m */,
 				DE7D7448165950270097252D /* Supporting Files */,
 			);
 			path = GHUnitTests;
@@ -499,7 +494,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7D744E165950270097252D /* main.m in Sources */,
-				DE7D7452165950270097252D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
