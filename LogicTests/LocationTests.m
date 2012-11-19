@@ -42,6 +42,26 @@
 }
 
 
+- (void)testUpdatePostalCodeWithPendingNoCallsReverseGeocode {
+
+    id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
+    
+    // we just want to test thatreverseGeocodeLocation:completionHandler gets called
+    // don't care about return values
+    [[mockGeocoder expect] reverseGeocodeLocation:nil completionHandler:nil];
+    
+    self.location.geocoder = mockGeocoder;
+    
+    self.location.geocodePending = NO;
+    
+    // call method under test
+    [self.location updatePostalCode:nil withHandler:nil];
+    
+    // verify the expected method was called
+    [mockGeocoder verify];
+}
+
+
 - (void)testCalculateSpeedInMPH {
     
     double kMetersPerMile = 1609.344;

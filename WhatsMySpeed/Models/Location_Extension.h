@@ -18,5 +18,8 @@
 @property (nonatomic, strong) CLGeocoder *geocoder;
 @property (nonatomic, assign) BOOL geocodePending;
 @property (nonatomic, strong) NSString *postalCode;
+
+- (void)updatePostalCode:(CLLocation *)newLocation
+             withHandler:(CLGeocodeCompletionHandler)completionHandler;
 @end
 
