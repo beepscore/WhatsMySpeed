@@ -8,6 +8,8 @@
 
 #import "LocationTests.h"
 #import "Location.h"
+#import "Location_Extension.h"
+#import "OCMock.h"
 
 @implementation LocationTests
 
@@ -52,6 +54,37 @@
                                actualSpeedMPH,
                                0.001,
                                @"Expected %f but got %f", expectedSpeedMPH, actualSpeedMPH);
+}
+
+
+- (void)testLocationManagerDidUpdateSetsSpeedMilePerHour {
+    
+    id mockCLLocation = (id)[OCMockObject mockForClass:[CLLocation class]];
+    
+    double kMetersPerMile = 1609.344;
+    NSInteger kSecondsPerHour = 60 * 60;
+    CLLocationSpeed speedMetersPerSecond = ((55.0 * kMetersPerMile) / kSecondsPerHour);
+
+    // set mockCLLocation to act like a CLLocation and return stub value for method "speed"
+    [[[mockCLLocation stub] andReturnValue:OCMOCK_VALUE(speedMetersPerSecond)] speed];
+    
+    // locationManager:didUpdateLocations: calls updatePostalCode:withHandler:,
+    // but we don't want to test updatePostalCode:withHandler: now.
+    // To minimize potential side effects from updatePostalCode:withHandler:,
+    // set location.geocodePending YES to exit from
+    // updatePostalCode:withHandler: as soon as possible.
+    self.location.geocodePending = YES;
+    
+    // reduce test dependencies - locationManager:didUpdateLocations:
+    // works even if locationManager is nil, so use nil.
+    [self.location locationManager:nil
+                didUpdateLocations:@[mockCLLocation]];
+    
+    float expectedSpeedMPH = 55.0;
+    STAssertEqualsWithAccuracy(expectedSpeedMPH,
+                               self.location.speedMilesPerHour,
+                               0.001,
+                               @"Expected %f but got %f", expectedSpeedMPH, self.location.speedMilesPerHour);
 }
 
 @end

@@ -7,12 +7,7 @@
 //
 
 #import "Location.h"
-
-@interface Location ()
-@property (nonatomic, strong) CLGeocoder *geocoder;
-@property (nonatomic, assign) BOOL geocodePending;
-@property (nonatomic, strong) NSString *postalCode;
-@end
+#import "Location_Extension.h"
 
 
 @implementation Location
