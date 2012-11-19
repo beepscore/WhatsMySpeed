@@ -53,7 +53,8 @@
     STAssertEqualsWithAccuracy(expectedSpeedMPH,
                                actualSpeedMPH,
                                0.001,
-                               @"Expected %f but got %f", expectedSpeedMPH, actualSpeedMPH);
+                               @"Expected %f but got %f", expectedSpeedMPH,
+                               actualSpeedMPH);
 }
 
 
@@ -65,7 +66,9 @@
     NSInteger kSecondsPerHour = 60 * 60;
     CLLocationSpeed speedMetersPerSecond = ((55.0 * kMetersPerMile) / kSecondsPerHour);
 
-    // set mockCLLocation to act like a CLLocation and return stub value for method "speed"
+    // locationManager:didUpdateLocations: calls
+    // calculateSpeedInMPH:[[locations lastObject] speed]
+    // So mockCLLocation must be able to return a stub value for method "speed"
     [[[mockCLLocation stub] andReturnValue:OCMOCK_VALUE(speedMetersPerSecond)] speed];
     
     // locationManager:didUpdateLocations: calls updatePostalCode:withHandler:,
@@ -75,8 +78,8 @@
     // updatePostalCode:withHandler: as soon as possible.
     self.location.geocodePending = YES;
     
-    // reduce test dependencies - locationManager:didUpdateLocations:
-    // works even if locationManager is nil, so use nil.
+    // Reduce test dependencies.
+    // locationManager:didUpdateLocations: works even if locationManager is nil, so use nil.
     [self.location locationManager:nil
                 didUpdateLocations:@[mockCLLocation]];
     
@@ -84,7 +87,8 @@
     STAssertEqualsWithAccuracy(expectedSpeedMPH,
                                self.location.speedMilesPerHour,
                                0.001,
-                               @"Expected %f but got %f", expectedSpeedMPH, self.location.speedMilesPerHour);
+                               @"Expected %f but got %f", expectedSpeedMPH,
+                               self.location.speedMilesPerHour);
 }
 
 @end
