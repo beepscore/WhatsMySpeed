@@ -46,7 +46,7 @@
 
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
     
-    // we just want to test thatreverseGeocodeLocation:completionHandler gets called
+    // we just want to test that reverseGeocodeLocation:completionHandler: gets called.
     // don't care about return values
     [[mockGeocoder expect] reverseGeocodeLocation:nil completionHandler:nil];
     
@@ -58,6 +58,25 @@
     [self.location updatePostalCode:nil withHandler:nil];
     
     // verify the expected method was called
+    [mockGeocoder verify];
+}
+
+
+- (void)testUpdatePostalCodeWithPendingYesDoesNotCallReverseGeocode {
+    
+    id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
+    
+    self.location.geocoder = mockGeocoder;
+    
+    self.location.geocodePending = YES;
+    
+    // call method under test
+    [self.location updatePostalCode:nil withHandler:nil];
+    
+    // Verify reverseGeocodeLocation:completionHandler: didn't get called.
+    // Because we didn't explicitly "expect" any methods with [mockGeocoder expect],
+    // if the method under test calls any method on the mockGeocoder
+    // OCMock will throw and error.
     [mockGeocoder verify];
 }
 
