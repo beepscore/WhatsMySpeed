@@ -76,8 +76,27 @@
     // Verify reverseGeocodeLocation:completionHandler: didn't get called.
     // Because we didn't explicitly "expect" any methods with [mockGeocoder expect],
     // if the method under test calls any method on the mockGeocoder
-    // OCMock will throw and error.
+    // OCMock will throw an exception and the test will fail.
     [mockGeocoder verify];
+}
+
+
+- (void)testUpdatePostalCodeWithPendingNoSetsPending {
+    // Video presenter Lisle notes this test could be written without using a mockGeocoder.
+    id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
+    
+    // expect method call to avoid error. Need to expect even if we don't call verify.
+    // don't care about return values
+    [[mockGeocoder expect] reverseGeocodeLocation:nil completionHandler:nil];
+    
+    self.location.geocoder = mockGeocoder;
+    
+    self.location.geocodePending = NO;
+    
+    // call method under test
+    [self.location updatePostalCode:nil withHandler:nil];
+    
+    STAssertTrue(self.location.geocodePending, @"Expected geocodePending");
 }
 
 
