@@ -92,6 +92,12 @@
 		DE49E3D716596B4D006D6ABA /* LocationGHTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationGHTests.m; sourceTree = "<group>"; };
 		DE5CCC7A16569D2500BD45C7 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
 		DE5CCC7B16569D2500BD45C7 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
+		DE61B2EE1659CEFA00A789EA /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "OCMockiOS/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		DE61B2EF1659CEFA00A789EA /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = OCMockiOS/OCMock/OCMArg.h; sourceTree = "<group>"; };
+		DE61B2F01659CEFA00A789EA /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = OCMockiOS/OCMock/OCMConstraint.h; sourceTree = "<group>"; };
+		DE61B2F11659CEFA00A789EA /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = OCMockiOS/OCMock/OCMock.h; sourceTree = "<group>"; };
+		DE61B2F21659CEFA00A789EA /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = OCMockiOS/OCMock/OCMockObject.h; sourceTree = "<group>"; };
+		DE61B2F31659CEFA00A789EA /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = OCMockiOS/OCMock/OCMockRecorder.h; sourceTree = "<group>"; };
 		DE7787131659721A00B34CA4 /* WeatherAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPITests.m; sourceTree = "<group>"; };
 		DE7D7442165950270097252D /* GHUnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7D7449165950270097252D /* GHUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHUnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 		DE1403481656062800B10232 = {
 			isa = PBXGroup;
 			children = (
+				DE61B2EB1659CEA100A789EA /* OCMockiOS */,
 				DE1403921656090600B10232 /* README.md */,
 				DE14035D1656062800B10232 /* WhatsMySpeed */,
 				DE1403811656062800B10232 /* ApplicationTests */,
@@ -268,6 +275,27 @@
 				DE5CCC7B16569D2500BD45C7 /* Location.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DE61B2EB1659CEA100A789EA /* OCMockiOS */ = {
+			isa = PBXGroup;
+			children = (
+				DE61B2ED1659CEBE00A789EA /* OCMock */,
+			);
+			name = OCMockiOS;
+			sourceTree = "<group>";
+		};
+		DE61B2ED1659CEBE00A789EA /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				DE61B2EE1659CEFA00A789EA /* NSNotificationCenter+OCMAdditions.h */,
+				DE61B2EF1659CEFA00A789EA /* OCMArg.h */,
+				DE61B2F01659CEFA00A789EA /* OCMConstraint.h */,
+				DE61B2F11659CEFA00A789EA /* OCMock.h */,
+				DE61B2F21659CEFA00A789EA /* OCMockObject.h */,
+				DE61B2F31659CEFA00A789EA /* OCMockRecorder.h */,
+			);
+			name = OCMock;
 			sourceTree = "<group>";
 		};
 		DE7D7447165950270097252D /* GHUnitTests */ = {
