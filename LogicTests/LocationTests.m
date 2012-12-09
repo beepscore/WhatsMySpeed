@@ -85,8 +85,13 @@
     // Video presenter Lisle notes this test could be written without using a mockGeocoder.
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
     
-    // expect method call to avoid error. Need to expect even if we don't call verify.
-    // don't care about return values
+    // Tell the mockGeocoder to expect a call to method
+    // reverseGeocodeLocation:completionHandler:
+    // If a mock object gets a method call it doesn't expect,
+    // or if it doesn't get a method call it expects,
+    // it will throw an error.
+    // Need to expect even if we don't call verify.
+    // Don't care about return values.
     [[mockGeocoder expect] reverseGeocodeLocation:nil completionHandler:nil];
     
     self.location.geocoder = mockGeocoder;
@@ -126,7 +131,7 @@
 
     // locationManager:didUpdateLocations: calls
     // calculateSpeedInMPH:[[locations lastObject] speed]
-    // So mockCLLocation must be able to return a stub value for method "speed"
+    // So set mockCLLocation to return a stub value for method "speed"
     [[[mockCLLocation stub] andReturnValue:OCMOCK_VALUE(speedMetersPerSecond)] speed];
     
     // locationManager:didUpdateLocations: calls updatePostalCode:withHandler:,
