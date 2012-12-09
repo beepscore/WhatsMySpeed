@@ -38,12 +38,12 @@
     STAssertNotNil(self.location.locationManager,
                    @"Expected self.location.locationManager not nil.");
     STAssertTrue([self.location.locationManager  isKindOfClass:[CLLocationManager class]],
-                   @"Expected self.location.locationManager is CLLocationManager.");
+                 @"Expected self.location.locationManager is CLLocationManager.");
 }
 
 
 - (void)testUpdatePostalCodeWithPendingNoCallsReverseGeocode {
-
+    
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
     
     // Tell mock object don't raise exception if reverseGeocodeLocation:completionHandler: gets called.
@@ -134,7 +134,7 @@
     double kMetersPerMile = 1609.344;
     NSInteger kSecondsPerHour = 60 * 60;
     CLLocationSpeed speedMetersPerSecond = ((55.0 * kMetersPerMile) / kSecondsPerHour);
-
+    
     // locationManager:didUpdateLocations: calls
     // calculateSpeedInMPH:[[locations lastObject] speed]
     // So set mockCLLocation to return a stub value for method "speed"
@@ -161,6 +161,34 @@
     
     // verify all stubbed or expected methods were called.
     [mockCLLocation verify];
+}
+
+
+- (void)testLocationManagerDidUpdateUpdatesPostalCode {
+    
+    id mockCLLocation = (id)[OCMockObject mockForClass:[CLLocation class]];
+    
+    double kMetersPerMile = 1609.344;
+    NSInteger kSecondsPerHour = 60 * 60;
+    CLLocationSpeed speedMetersPerSecond = ((55.0 * kMetersPerMile) / kSecondsPerHour);
+    
+    // locationManager:didUpdateLocations: calls
+    // calculateSpeedInMPH:[[locations lastObject] speed]
+    // So set mockCLLocation to return a stub value for method "speed"
+    [[[mockCLLocation stub] andReturnValue:OCMOCK_VALUE(speedMetersPerSecond)] speed];
+    
+    // Create a partial mock that will use the original object but override some methods.
+    id mockSelfLocation = [OCMockObject partialMockForObject:self.location];
+    
+    [[mockSelfLocation expect] updatePostalCode:[OCMArg any] withHandler:[OCMArg any]];
+    
+    // This call uses two mocks, one as the receiver and one as an argument.
+    [mockSelfLocation locationManager:nil
+                   didUpdateLocations:@[mockCLLocation]];
+    
+    // verify all stubbed or expected methods were called.
+    [mockCLLocation verify];
+    [mockSelfLocation verify];
 }
 
 @end
