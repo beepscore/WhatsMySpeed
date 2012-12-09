@@ -40,6 +40,12 @@
 }
 
 
+- (void)testThatInitSetsGeocodePendingNo {
+    STAssertTrue((NO == self.location.geocodePending),
+                 @"Expected self.location.geocodePending NO but got %@.", self.location.geocodePending);
+}
+
+
 - (void)testThatInitSetsLocationManager {
     STAssertNotNil(self.location.locationManager,
                    @"Expected self.location.locationManager not nil.");
