@@ -46,9 +46,18 @@
 }
 
 
+- (void)testThatInitSetsGeocoder {
+    STAssertNotNil(self.location.geocoder,
+                   @"Expected self.location.geocoder not nil.");
+    STAssertTrue([self.location.geocoder isKindOfClass:[CLGeocoder class]],
+                 @"Expected self.location.geocoder is CLGeocoder.");
+}
+
+
 - (void)testThatInitSetsLocationManager {
     STAssertNotNil(self.location.locationManager,
                    @"Expected self.location.locationManager not nil.");
+    
     STAssertTrue([self.location.locationManager  isKindOfClass:[CLLocationManager class]],
                  @"Expected self.location.locationManager is CLLocationManager.");
 }
