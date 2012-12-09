@@ -17,13 +17,15 @@
     if (!self) {
         return nil;
     }
-
+    
+    self.postalCode = @"Unknown";
+    self.geocodePending = NO;
+    self.geocoder = [[CLGeocoder alloc] init];
+    
     _locationManager = [[CLLocationManager alloc] init];
     [_locationManager setDelegate:self];
     [_locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
     [_locationManager setDistanceFilter:kCLDistanceFilterNone];
-    
-    _geocoder = [[CLGeocoder alloc] init];
     
     return self;
 }

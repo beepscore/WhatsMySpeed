@@ -34,6 +34,12 @@
 }
 
 
+- (void)testThatInitSetsPostalCode {
+    STAssertTrue([self.location.postalCode  isEqualToString:@"Unknown"],
+                 @"Expected self.location.postalCode 'Unknown' but got %@.", self.location.postalCode);
+}
+
+
 - (void)testThatInitSetsLocationManager {
     STAssertNotNil(self.location.locationManager,
                    @"Expected self.location.locationManager not nil.");
