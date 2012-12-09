@@ -46,7 +46,7 @@
 
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
     
-    // we just want to test that reverseGeocodeLocation:completionHandler: gets called.
+    // Tell mock object don't raise exception if reverseGeocodeLocation:completionHandler: gets called.
     // don't care about return values
     [[mockGeocoder expect] reverseGeocodeLocation:nil completionHandler:nil];
     
@@ -54,10 +54,12 @@
     
     self.location.geocodePending = NO;
     
-    // call method under test
+    // call method under test,
+    // which should in turn call reverseGeocodeLocation:completionHandler:
     [self.location updatePostalCode:nil withHandler:nil];
     
-    // verify the expected method was called
+    // Verify expected method reverseGeocodeLocation:completionHandler: was called.
+    // If not, OCMock will raise an NSException.
     [mockGeocoder verify];
 }
 
@@ -71,12 +73,12 @@
     self.location.geocodePending = YES;
     
     // call method under test
+    // Note we didn't explicitly "expect" any methods with [mockGeocoder expect].
+    // So if updatePostalCode:withHandler: calls any method on location.geocoder, the test will fail.
     [self.location updatePostalCode:nil withHandler:nil];
     
-    // Verify reverseGeocodeLocation:completionHandler: didn't get called.
-    // Because we didn't explicitly "expect" any methods with [mockGeocoder expect],
-    // if the method under test calls any method on the mockGeocoder
-    // OCMock will throw an exception and the test will fail.
+    // Tell mockGeocoder to check that all expected methods were called.
+    // With the method as shown in the video, this has no effect.
     [mockGeocoder verify];
 }
 
@@ -85,21 +87,25 @@
     // Video presenter Lisle notes this test could be written without using a mockGeocoder.
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
     
-    // Tell the mockGeocoder to expect a call to method
-    // reverseGeocodeLocation:completionHandler:
-    // If a mock object gets a method call it doesn't expect,
-    // or if it doesn't get a method call it expects,
-    // it will throw an error.
-    // Need to expect even if we don't call verify.
+    // Before calling a method on a mock, we must tell the mock to "expect" that call.
+    // If the test calls a method on a mock that wasn't expected or stubbed, the test will fail.
+    // Tell mockGeocoder to expect a call to
+    // reverseGeocodeLocation:completionHandler: with nil arguments
     // Don't care about return values.
-    [[mockGeocoder expect] reverseGeocodeLocation:nil completionHandler:nil];
+    [[mockGeocoder expect] reverseGeocodeLocation:[OCMArg isNil]
+                                completionHandler:[OCMArg isNil]];
     
     self.location.geocoder = mockGeocoder;
     
     self.location.geocodePending = NO;
     
-    // call method under test
+    // call method under test,
+    // which should in turn call reverseGeocodeLocation:completionHandler:
     [self.location updatePostalCode:nil withHandler:nil];
+    
+    // Tell mockGeocoder to verify that all stubbed or expected methods were called.
+    // If any verified method wasn't called, the test will fail.
+    [mockGeocoder verify];
     
     STAssertTrue(self.location.geocodePending, @"Expected geocodePending");
 }
@@ -152,6 +158,9 @@
                                0.001,
                                @"Expected %f but got %f", expectedSpeedMPH,
                                self.location.speedMilesPerHour);
+    
+    // verify all stubbed or expected methods were called.
+    [mockCLLocation verify];
 }
 
 @end
