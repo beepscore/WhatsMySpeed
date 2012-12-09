@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE0B074B1659532000301BBA /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0B074A1659532000301BBA /* GHUnitIOS.framework */; };
+		DE0D88B11674979E003D52B9 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = DE0D88B01674979E003D52B9 /* License.txt */; };
 		DE1403581656062800B10232 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403571656062800B10232 /* UIKit.framework */; };
 		DE14035A1656062800B10232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
 		DE14035C1656062800B10232 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE14035B1656062800B10232 /* CoreGraphics.framework */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		DE0B074A1659532000301BBA /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
+		DE0D88B01674979E003D52B9 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = License.txt; path = OCMock/License.txt; sourceTree = "<group>"; };
 		DE1403531656062800B10232 /* WhatsMySpeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsMySpeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1403571656062800B10232 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE1403591656062800B10232 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -282,6 +284,7 @@
 		DE61B2ED1659CEBE00A789EA /* OCMock */ = {
 			isa = PBXGroup;
 			children = (
+				DE0D88B01674979E003D52B9 /* License.txt */,
 				DE17B1641659DB5600A9A6E3 /* NSNotificationCenter+OCMAdditions.h */,
 				DE17B1651659DB5600A9A6E3 /* OCMArg.h */,
 				DE17B1661659DB5600A9A6E3 /* OCMConstraint.h */,
@@ -450,6 +453,7 @@
 				DE14036E1656062800B10232 /* Default-568h@2x.png in Resources */,
 				DE1403711656062800B10232 /* MainStoryboard.storyboard in Resources */,
 				DE1403931656090600B10232 /* README.md in Resources */,
+				DE0D88B11674979E003D52B9 /* License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
