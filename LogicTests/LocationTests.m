@@ -63,6 +63,19 @@
 }
 
 
+- (void)testThatInitSetsLocationManagerDelegate {
+    STAssertNotNil(self.location.locationManager.delegate,
+                   @"Expected self.location.locationManager.delegate not nil.");
+    
+    // Use == to test both variables point to same memory address. i.e. they are the same instance.
+    // Could also use isEqual:
+    // Don't use STAssertEqualObjects, it tests isEqualTo:, doesn't test if same instance.
+    // http://blog.bignerdranch.com/334-isequal-vs-isequaltostring/
+    STAssertTrue(self.location == self.location.locationManager.delegate,
+                 @"Expected self.location equals self.location.locationManager.delegate.");
+}
+
+
 - (void)testUpdatePostalCodeWithPendingNoCallsReverseGeocode {
     
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
