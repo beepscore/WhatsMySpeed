@@ -82,6 +82,14 @@
 }
 
 
+- (void)testThatInitSetsLocationManagerDistanceFilter {
+    STAssertTrue((kCLDistanceFilterNone == self.location.locationManager.distanceFilter),
+                 @"Expected distanceFilter %g but got %g.",
+                 kCLDistanceFilterNone,
+                 self.location.locationManager.distanceFilter);
+}
+
+
 - (void)testUpdatePostalCodeWithPendingNoCallsReverseGeocode {
     
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
