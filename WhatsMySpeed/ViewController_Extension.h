@@ -18,4 +18,7 @@
 // Change IBOutlet memory management from weak to strong for use by unit tests
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) IBOutlet UILabel *speedLabel;
+
+- (void)beginLocationUpdates:(Location *)aLocation;
+
 @end

@@ -17,8 +17,26 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.location = [[Location alloc] init];
+    
+    // We want to call
+    // [self.location startLocationUpdates]
+    // However, if we did it here, it would make unit testing difficult,
+    // because we wouldn't have the opportunity to pass a mock object.
+    // Instead make a simple method beginLocationUpdates:
+    [self beginLocationUpdates:self.location];
+    
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
 }
+
+
+// Method has a parameter for location, allowing unit tests to pass in a mock.
+// This is called "tell, don't ask".
+// Tell method to use argument aLocation, it doesn't ask self for self.location
+- (void)beginLocationUpdates:(Location *)aLocation
+{
+    [aLocation startLocationUpdates];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
