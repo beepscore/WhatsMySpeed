@@ -30,6 +30,7 @@
 		DE28ECDE1675B21400B56B0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1403731656062800B10232 /* ViewController.m */; };
 		DE41CDCD1659596400891483 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE41CDCC1659596400891483 /* QuartzCore.framework */; };
 		DE49E3D816596B4D006D6ABA /* LocationGHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49E3D716596B4D006D6ABA /* LocationGHTests.m */; };
+		DE4B55EE1675B82800D25B2E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCFCB91656F54C001D52BD /* MapKit.framework */; };
 		DE5CCC7C16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
 		DE5CCC7D16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
 		DE6B0CD51675AF5B00163F37 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6B0CD41675AF5B00163F37 /* ViewControllerTests.m */; };
@@ -171,6 +172,7 @@
 				DEFAA65E16562D75002D1AD0 /* UIKit.framework in Frameworks */,
 				DEFAA65F16562D75002D1AD0 /* Foundation.framework in Frameworks */,
 				DEC202B91656B03600B42005 /* CoreLocation.framework in Frameworks */,
+				DE4B55EE1675B82800D25B2E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
