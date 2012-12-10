@@ -74,6 +74,14 @@
 }
 
 
+- (void)testThatInitSetsLocationManagerDesiredAccuracy {
+    STAssertTrue((kCLLocationAccuracyBestForNavigation == self.location.locationManager.desiredAccuracy),
+                 @"Expected desiredAccuracy %g but got %g.",
+                 kCLLocationAccuracyBestForNavigation,
+                 self.location.locationManager.desiredAccuracy);
+}
+
+
 - (void)testUpdatePostalCodeWithPendingNoCallsReverseGeocode {
     
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
