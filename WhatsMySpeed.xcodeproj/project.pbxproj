@@ -31,6 +31,7 @@
 		DE49E3D816596B4D006D6ABA /* LocationGHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE49E3D716596B4D006D6ABA /* LocationGHTests.m */; };
 		DE5CCC7C16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
 		DE5CCC7D16569D2500BD45C7 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5CCC7B16569D2500BD45C7 /* Location.m */; };
+		DE6B0CD51675AF5B00163F37 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6B0CD41675AF5B00163F37 /* ViewControllerTests.m */; };
 		DE7787141659721A00B34CA4 /* WeatherAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7787131659721A00B34CA4 /* WeatherAPITests.m */; };
 		DE7D7444165950270097252D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403571656062800B10232 /* UIKit.framework */; };
 		DE7D7445165950270097252D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
@@ -102,6 +103,8 @@
 		DE49E3D716596B4D006D6ABA /* LocationGHTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationGHTests.m; sourceTree = "<group>"; };
 		DE5CCC7A16569D2500BD45C7 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
 		DE5CCC7B16569D2500BD45C7 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
+		DE6B0CD31675AF5B00163F37 /* ViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTests.h; sourceTree = "<group>"; };
+		DE6B0CD41675AF5B00163F37 /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
 		DE7787131659721A00B34CA4 /* WeatherAPITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherAPITests.m; sourceTree = "<group>"; };
 		DE7D7442165950270097252D /* GHUnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7D7449165950270097252D /* GHUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHUnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -322,9 +325,11 @@
 		DEFAA66016562D75002D1AD0 /* LogicTests */ = {
 			isa = PBXGroup;
 			children = (
+				DEFAA66116562D75002D1AD0 /* Supporting Files */,
 				DEFAA66616562D75002D1AD0 /* LocationTests.h */,
 				DEFAA66716562D75002D1AD0 /* LocationTests.m */,
-				DEFAA66116562D75002D1AD0 /* Supporting Files */,
+				DE6B0CD31675AF5B00163F37 /* ViewControllerTests.h */,
+				DE6B0CD41675AF5B00163F37 /* ViewControllerTests.m */,
 			);
 			path = LogicTests;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 			files = (
 				DEFAA66816562D75002D1AD0 /* LocationTests.m in Sources */,
 				DE5CCC7D16569D2500BD45C7 /* Location.m in Sources */,
+				DE6B0CD51675AF5B00163F37 /* ViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
