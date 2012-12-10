@@ -90,6 +90,22 @@
 }
 
 
+- (void)testStartLocationUpdatesCallsStartUpdatingLocation {
+    
+    id mockLocationManager = (id)[OCMockObject mockForClass:[CLLocationManager class]];
+    
+    self.location.locationManager = mockLocationManager;
+    
+    // Don't throw exception if startUpdatingLocation gets called
+    [[mockLocationManager expect] startUpdatingLocation];
+    
+    [self.location startLocationUpdates];
+    
+    // verify all stubbed or expected methods were called.
+    [mockLocationManager verify];
+}
+
+
 - (void)testUpdatePostalCodeWithPendingNoCallsReverseGeocode {
     
     id mockGeocoder = (id)[OCMockObject mockForClass:[CLGeocoder class]];
