@@ -13,5 +13,6 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) Location *location;
+@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
 
 @end

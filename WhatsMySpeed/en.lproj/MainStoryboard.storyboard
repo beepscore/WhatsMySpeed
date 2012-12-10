@@ -17,20 +17,33 @@
                                     <constraint firstAttribute="height" constant="548" id="PYZ-x5-GR0"/>
                                 </constraints>
                             </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Calculating..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKy-2G-m2v">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="NkE-ZW-Pf1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SKy-2G-m2v" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="CNU-ev-SLl"/>
                             <constraint firstItem="wcW-uv-Stf" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Gq6-Ig-Yoc"/>
+                            <constraint firstItem="SKy-2G-m2v" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="I49-dX-YDi"/>
+                            <constraint firstAttribute="trailing" secondItem="SKy-2G-m2v" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LO9-XR-lHW"/>
                             <constraint firstItem="wcW-uv-Stf" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="UVQ-KR-i1w"/>
                             <constraint firstItem="wcW-uv-Stf" firstAttribute="top" secondItem="3" secondAttribute="top" constant="5" id="veh-4g-Bby"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="wcW-uv-Stf" id="TLQ-N7-OsK"/>
+                        <outlet property="speedLabel" destination="SKy-2G-m2v" id="OGv-Bh-fcI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="191" y="-53"/>
         </scene>
     </scenes>
     <classes>
@@ -41,6 +54,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="speedLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
