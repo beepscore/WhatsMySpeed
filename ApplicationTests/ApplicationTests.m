@@ -55,4 +55,10 @@
                  @"Expected map view tacking mode follow.");
 }
 
+
+- (void)testSpeedLabelOutletConnected {
+    STAssertNotNil([self.vc speedLabel],
+                 @"Expected speedLabel IBOutlet connected.");
+}
+
 @end
