@@ -67,10 +67,8 @@
     STAssertNotNil(self.location.locationManager.delegate,
                    @"Expected self.location.locationManager.delegate not nil.");
     
-    // Use == to test both variables point to same memory address. i.e. they are the same instance.
-    // Could also use isEqual:
-    // Don't use STAssertEqualObjects, it tests isEqualTo:, doesn't test if same instance.
-    // http://blog.bignerdranch.com/334-isequal-vs-isequaltostring/
+    // Use == to test both variables point to the same memory address, i.e. the same instance.
+    // Don't use STAssertEqualObjects, it compares two objects using isEqual:
     STAssertTrue(self.location == self.location.locationManager.delegate,
                  @"Expected self.location equals self.location.locationManager.delegate.");
 }
