@@ -93,4 +93,26 @@
     [mockLocation verify];
 }
 
+
+- (void)testLocationChangeNotificationUpdatesSpeed {
+    
+    id mockLocation = [OCMockObject mockForClass:[Location class]];
+    
+    [(Location *)[[mockLocation stub] andReturn:@"55 MPH"] speedText];
+    
+    id notificationMock = [OCMockObject mockForClass:[NSNotification class]];
+    
+    // Tell notificationMock to stub Notification method "object" and return the mockLocation
+    [[[notificationMock stub] andReturn:(Location *)mockLocation] object];
+    
+    id labelMock = [OCMockObject mockForClass:[UILabel class]];
+    [[labelMock expect] setText:@"55 MPH"];
+    
+    [self.viewController setSpeedLabel:labelMock];
+    
+    [self.viewController handleLocationChange:(NSNotification *)notificationMock];
+    
+    [labelMock verify];
+}
+
 @end

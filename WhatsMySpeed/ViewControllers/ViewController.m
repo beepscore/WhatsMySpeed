@@ -18,6 +18,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.location = [[Location alloc] init];
     
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:@"LocationChange"
+     object:self.location
+     queue:nil
+     usingBlock:^(NSNotification *notification) {
+         [self handleLocationChange:notification];
+     }];
+    
     // We want to call
     // [self.location startLocationUpdates]
     // However, if we did it here, it would make unit testing difficult,
@@ -43,6 +51,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     self.location = nil;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)handleLocationChange:(NSNotification *)notification {
+    Location *locationFromNotification = [notification object];
+    self.speedLabel.text = locationFromNotification.speedText;
 }
 
 @end

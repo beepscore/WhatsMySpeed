@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) Location *location;
 
+- (void)handleLocationChange:(NSNotification *)notification;
+
 @end
