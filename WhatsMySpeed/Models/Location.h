@@ -27,6 +27,7 @@
  */
 @property (assign) float speedMilesPerHour;
 
+@property (nonatomic, strong) NSString *speedText;
 
 /** Expose a method to start location updates.
  Unit test can call this method.
