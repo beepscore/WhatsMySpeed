@@ -19,12 +19,10 @@
     self.location = [[Location alloc] init];
     
     [[NSNotificationCenter defaultCenter]
-     addObserverForName:@"LocationChange"
-     object:self.location
-     queue:nil
-     usingBlock:^(NSNotification *notification) {
-         [self handleLocationChange:notification];
-     }];
+     addObserver:self
+     selector:@selector(handleLocationChange:)
+     name:@"LocationChange"
+     object:nil];
     
     // We want to call
     // [self.location startLocationUpdates]
@@ -53,9 +51,11 @@
     self.location = nil;
 }
 
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 
 - (void)handleLocationChange:(NSNotification *)notification {
     Location *locationFromNotification = [notification object];
