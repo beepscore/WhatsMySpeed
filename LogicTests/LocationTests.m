@@ -255,4 +255,44 @@
     [mockSelfLocation verify];
 }
 
+
+- (void)testLocationManagerDidUpdateNotification {
+    
+    id mockObserver = [OCMockObject observerMock];
+    
+    [[NSNotificationCenter defaultCenter] addMockObserver:mockObserver
+                                                     name:@"LocationChange"
+                                                   object:nil];
+    
+    [[mockObserver expect] notificationWithName:@"LocationChange"
+                                         object:[OCMArg any]];
+    
+    id mockCLLocation = (id)[OCMockObject mockForClass:[CLLocation class]];
+    
+    double kMetersPerMile = 1609.344;
+    NSInteger kSecondsPerHour = 60 * 60;
+    CLLocationSpeed speedMetersPerSecond = ((55.0 * kMetersPerMile) / kSecondsPerHour);
+    
+    // locationManager:didUpdateLocations: calls
+    // calculateSpeedInMPH:[[locations lastObject] speed]
+    // So set mockCLLocation to return a stub value for method "speed"
+    [[[mockCLLocation stub] andReturnValue:OCMOCK_VALUE(speedMetersPerSecond)] speed];
+    
+    // set location.geocodePending YES to exit from
+    // updatePostalCode:withHandler: as soon as possible.
+    self.location.geocodePending = YES;
+    
+    // Reduce test dependencies.
+    // locationManager:didUpdateLocations: works even if locationManager is nil, so use nil.
+    [self.location locationManager:nil
+                didUpdateLocations:@[mockCLLocation]];
+    
+    [mockObserver verify];
+    
+    // Must remove observer.
+    // iPhone app can support multiple observers.
+    // OCMock can't support multiple active mockObservers.
+    [[NSNotificationCenter defaultCenter] removeObserver:mockObserver];
+}
+
 @end

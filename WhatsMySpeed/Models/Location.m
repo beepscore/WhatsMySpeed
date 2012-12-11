@@ -81,6 +81,9 @@
         // CLLocation speed is meters per second.
         self.speedMilesPerHour = [self calculateSpeedInMPH:[[locations lastObject] speed]];
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationChange"
+                                                        object:self];
 }
 
 @end
