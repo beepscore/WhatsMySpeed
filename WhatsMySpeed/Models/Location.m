@@ -21,6 +21,7 @@
     self.postalCode = @"Unknown";
     self.geocodePending = NO;
     self.geocoder = [[CLGeocoder alloc] init];
+    self.speedText = @"Calculating...";
     
     _locationManager = [[CLLocationManager alloc] init];
     [_locationManager setDelegate:self];
@@ -81,6 +82,8 @@
         // CLLocation speed is meters per second.
         self.speedMilesPerHour = [self calculateSpeedInMPH:[[locations lastObject] speed]];
     }
+    
+    self.speedText = [NSString stringWithFormat:@"%.0f MPH", self.speedMilesPerHour];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationChange"
                                                         object:self];

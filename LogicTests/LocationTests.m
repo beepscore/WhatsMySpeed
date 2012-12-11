@@ -297,4 +297,42 @@
     [[NSNotificationCenter defaultCenter] removeObserver:mockObserver];
 }
 
+
+- (void)testSpeedText {
+    
+    id mockCLLocation = (id)[OCMockObject mockForClass:[CLLocation class]];
+    
+    double kMetersPerMile = 1609.344;
+    NSInteger kSecondsPerHour = 60 * 60;
+    CLLocationSpeed speedMetersPerSecond = ((55.0 * kMetersPerMile) / kSecondsPerHour);
+    
+    // locationManager:didUpdateLocations: calls
+    // calculateSpeedInMPH:[[locations lastObject] speed]
+    // So set mockCLLocation to return a stub value for method "speed"
+    [[[mockCLLocation stub] andReturnValue:OCMOCK_VALUE(speedMetersPerSecond)] speed];
+    
+    // locationManager:didUpdateLocations: calls updatePostalCode:withHandler:,
+    // but we don't want to test updatePostalCode:withHandler: now.
+    // To minimize potential side effects from updatePostalCode:withHandler:,
+    // set location.geocodePending YES to exit from
+    // updatePostalCode:withHandler: as soon as possible.
+    self.location.geocodePending = YES;
+    
+    // Reduce test dependencies.
+    // locationManager:didUpdateLocations: works even if locationManager is nil, so use nil.
+    [self.location locationManager:nil
+                didUpdateLocations:@[mockCLLocation]];
+
+    NSString *expectedSpeedText = @"55 MPH";
+    NSString *speedText = [self.location speedText];
+    
+    STAssertTrue([speedText isEqualToString:expectedSpeedText],
+                 @"Expected speedText %@ but got %@.",
+                 expectedSpeedText,
+                 speedText);
+    
+    // verify all stubbed or expected methods were called.
+    [mockCLLocation verify];
+}
+
 @end
