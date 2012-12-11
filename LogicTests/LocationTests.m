@@ -256,6 +256,8 @@
 }
 
 
+/** Test that locationManager posts a notification when location changes
+ */
 - (void)testLocationManagerDidUpdateNotification {
     
     id mockObserver = [OCMockObject observerMock];
