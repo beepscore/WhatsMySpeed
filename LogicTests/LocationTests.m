@@ -256,6 +256,8 @@
 }
 
 
+#pragma mark - Notificiation test
+
 /** Test that locationManager posts a notification when location changes
  */
 - (void)testLocationManagerDidUpdateNotification {
@@ -297,6 +299,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:mockObserver];
 }
 
+
+#pragma mark - 
 
 - (void)testSpeedText {
     
