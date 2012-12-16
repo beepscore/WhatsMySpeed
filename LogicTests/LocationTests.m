@@ -34,6 +34,15 @@
 }
 
 
+- (void)testSharedInstanceReturnsSameObject {
+    Location *sharedInstance1 = [Location sharedInstance];
+    Location *sharedInstance2 = [Location sharedInstance];
+    
+    STAssertTrue((sharedInstance2 == sharedInstance1),
+                 @"Expected sharedInstance should return same object.");
+}
+
+
 - (void)testInit {
     STAssertNotNil(self.location, @"Expected self.location not nil.");
 }
