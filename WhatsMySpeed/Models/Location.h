@@ -29,6 +29,10 @@
 
 @property (nonatomic, strong) NSString *speedText;
 
+// Location is implemented as "singleton as a choice".
+// sharedInstance returns a singleton, but
+// alloc init allows creating another instance
+// (i.e. init isn't customized to explicitly prevent creating another instance.)
 + (Location *)sharedInstance;
 
 /** Expose a method to start location updates.
