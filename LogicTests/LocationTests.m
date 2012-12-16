@@ -34,12 +34,21 @@
 }
 
 
-- (void)testSharedInstanceReturnsSameObject {
+- (void)testSharedInstanceReturnsSameInstance {
     Location *sharedInstance1 = [Location sharedInstance];
     Location *sharedInstance2 = [Location sharedInstance];
     
     STAssertTrue((sharedInstance2 == sharedInstance1),
-                 @"Expected sharedInstance should return same object.");
+                 @"Expected sharedInstance should return same instance.");
+}
+
+
+// Test class doesn't strictly enforce singleton, it uses "singleton as a choice"
+- (void)testInitCanInstantiateAnotherInstance {
+    Location *anotherLocation = [[Location alloc] init];
+    
+    STAssertTrue((anotherLocation != [Location sharedInstance]),
+                 @"Expected anotherLocation not equal to sharedInstance.");
 }
 
 
