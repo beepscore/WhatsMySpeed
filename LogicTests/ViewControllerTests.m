@@ -41,8 +41,26 @@
 }
 
 
+- (void)testViewDidLoadAddsTapGestureRecognizer {
+    // Use nice mock to ignore un-expect-ed calls.
+    // Now this test can avoid concerning itself with setUserTrackingMode:
+    id mockMapView = [OCMockObject niceMockForClass:[MKMapView class]];
+    self.viewController.mapView = mockMapView;
+    
+    //[[mockMapView expect] addGestureRecognizer:tapGestureRecognizer];
+    [[mockMapView expect] addGestureRecognizer:[OCMArg any]];
+    
+    [self.viewController viewDidLoad];
+    
+    // use the mock to verify all stubbed or expected methods were called.
+    [mockMapView verify];
+}
+
+
 - (void)testViewDidLoadSetsUserTrackingMode {
-    id mockMapView = [OCMockObject mockForClass:[MKMapView class]];
+    // Use nice mock to ignore un-expect-ed calls.
+    // Now this test can avoid concerning itself with addGestureRecognizer:
+    id mockMapView = [OCMockObject niceMockForClass:[MKMapView class]];
     
     self.viewController.mapView = mockMapView;
     

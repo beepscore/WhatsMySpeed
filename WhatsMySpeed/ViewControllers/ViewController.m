@@ -18,6 +18,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.location = [[Location alloc] init];
     
+    UIGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]
+                                                initWithTarget:self
+                                                 action:@selector(mapTapped)];
+    [self.mapView addGestureRecognizer:tapGestureRecognizer];
+    
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(handleLocationChange:)
