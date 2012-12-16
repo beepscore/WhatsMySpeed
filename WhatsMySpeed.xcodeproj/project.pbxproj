@@ -25,7 +25,7 @@
 		DE14037E1656062800B10232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1403591656062800B10232 /* Foundation.framework */; };
 		DE1403861656062800B10232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE1403841656062800B10232 /* InfoPlist.strings */; };
 		DE1403891656062800B10232 /* ApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1403881656062800B10232 /* ApplicationTests.m */; };
-		DE1403931656090600B10232 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE1403921656090600B10232 /* README.md */; };
+		DE1403931656090600B10232 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = DE1403921656090600B10232 /* README.markdown */; };
 		DE17B16B1659DB8900A9A6E3 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE17B16A1659DB8900A9A6E3 /* libOCMock.a */; };
 		DE28ECDE1675B21400B56B0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1403731656062800B10232 /* ViewController.m */; };
 		DE41CDCD1659596400891483 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE41CDCC1659596400891483 /* QuartzCore.framework */; };
@@ -92,7 +92,7 @@
 		DE1403851656062800B10232 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE1403871656062800B10232 /* ApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationTests.h; sourceTree = "<group>"; };
 		DE1403881656062800B10232 /* ApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationTests.m; sourceTree = "<group>"; };
-		DE1403921656090600B10232 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		DE1403921656090600B10232 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		DE17B1641659DB5600A9A6E3 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		DE17B1651659DB5600A9A6E3 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = OCMock/OCMArg.h; sourceTree = "<group>"; };
 		DE17B1661659DB5600A9A6E3 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = OCMock/OCMConstraint.h; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				DE61B2ED1659CEBE00A789EA /* OCMock */,
-				DE1403921656090600B10232 /* README.md */,
+				DE1403921656090600B10232 /* README.markdown */,
 				DE14035D1656062800B10232 /* WhatsMySpeed */,
 				DE1403811656062800B10232 /* ApplicationTests */,
 				DEFAA66016562D75002D1AD0 /* LogicTests */,
@@ -458,7 +458,7 @@
 				DE14036C1656062800B10232 /* Default@2x.png in Resources */,
 				DE14036E1656062800B10232 /* Default-568h@2x.png in Resources */,
 				DE1403711656062800B10232 /* MainStoryboard.storyboard in Resources */,
-				DE1403931656090600B10232 /* README.md in Resources */,
+				DE1403931656090600B10232 /* README.markdown in Resources */,
 				DE0D88B11674979E003D52B9 /* License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
