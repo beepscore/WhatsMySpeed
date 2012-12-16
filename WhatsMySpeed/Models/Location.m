@@ -12,13 +12,15 @@
 
 @implementation Location
 
-static Location *_sharedInstance = nil;
-
-+ (Location *)sharedInstance {
-    if (!_sharedInstance) {
-        _sharedInstance = [[Location alloc] init];
-    }
-    return _sharedInstance;
++ (id)sharedInstance {
+    
+    // http://stackoverflow.com/questions/5720029/create-singleton-using-gcds-dispatch-once-in-objective-c
+    static dispatch_once_t once;
+    static id sharedInstance;
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
 }
 
 
@@ -73,11 +75,11 @@ static Location *_sharedInstance = nil;
 #pragma mark - LocationManager Delegate method
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
-
+    
     if (!locations
         || (0 == locations.count)) {
         self.speedMilesPerHour = 0.0;
-
+        
     } else {
         // we have at least one location
         // if locations contains multiple objects, the lastObject is most recent.
