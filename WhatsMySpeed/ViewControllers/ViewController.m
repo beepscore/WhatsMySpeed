@@ -71,4 +71,9 @@
     self.speedLabel.text = locationFromNotification.speedText;
 }
 
+
+- (void)mapTapped {
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+}
+
 @end

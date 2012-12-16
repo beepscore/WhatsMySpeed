@@ -20,5 +20,5 @@
 @property (nonatomic, strong) IBOutlet UILabel *speedLabel;
 
 - (void)beginLocationUpdates:(Location *)aLocation;
-
+- (void)mapTapped;
 @end

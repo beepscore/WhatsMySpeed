@@ -176,4 +176,18 @@
     [mockViewController verify];
 }
 
+
+- (void)testTapGestureHandlerSetsUserTrackingModeFollow {
+    
+    id mockMapView = [OCMockObject mockForClass:[MKMapView class]];
+    self.viewController.mapView = mockMapView;
+    
+    [[mockMapView expect] setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    
+    [self.viewController mapTapped];
+    
+    // Verify all stubbed or expected methods were called.
+    [mockMapView verify];
+}
+    
 @end
