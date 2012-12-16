@@ -116,14 +116,21 @@
 }
 
 
-// It's difficult to mock or partially mock singleton NSNotificationCenter
-// Instead, mock view controller
 - (void)testThatNotificationHandlerCalled {
+    // If NSNotificationCenter wasn't a singleton, we could mock it and
+    // have the mock expect a call to addObserver:selector:name:object: when the viewController registers.
+    // However, NSNotificationCenter is a singleton and it's difficult to mock it.
+    // Instead, mock the view controller using a partial mock.
+    // Partial mock is useful to test if an object calls a method on itself.
     
-    // use a partial mock to test if the viewController calls a method on itself
     id mockViewController = [OCMockObject
                              partialMockForObject:self.viewController];
     
+    // When the view controller registers for the LocationChange notification,
+    // it sets the selector to handleLocationChange:.
+    // Expecting and verifying handleLocationChange: is called is an
+    // indirect test the viewController registered as an observier, and a
+    // direct test the notification response handler calls the desired method.
     [[mockViewController expect] handleLocationChange:[OCMArg any]];
     
     [mockViewController viewDidLoad];
@@ -131,7 +138,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationChange"
                                                         object:nil];
     
-    // use the partial mock to verify all stubbed or expected methods were called.
+    // Verify all stubbed or expected methods were called.
     [mockViewController verify];
 }
 
