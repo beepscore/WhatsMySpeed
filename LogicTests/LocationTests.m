@@ -29,6 +29,11 @@
 }
 
 
+- (void)testSharedInstance {
+    STAssertNotNil([Location sharedInstance], @"Expected Location sharedInstance not nil.");
+}
+
+
 - (void)testInit {
     STAssertNotNil(self.location, @"Expected self.location not nil.");
 }

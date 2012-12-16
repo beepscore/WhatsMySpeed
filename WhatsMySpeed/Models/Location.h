@@ -29,6 +29,8 @@
 
 @property (nonatomic, strong) NSString *speedText;
 
++ (Location *)sharedInstance;
+
 /** Expose a method to start location updates.
  Unit test can call this method.
  Class could start location updates in init without exposing method,

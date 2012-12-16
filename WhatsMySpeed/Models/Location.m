@@ -12,6 +12,16 @@
 
 @implementation Location
 
+static Location *_sharedInstance = nil;
+
++ (Location *)sharedInstance {
+    if (!_sharedInstance) {
+        _sharedInstance = [[Location alloc] init];
+    }
+    return _sharedInstance;
+}
+
+
 - (id)init {
     self = [super init];
     if (!self) {
