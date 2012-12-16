@@ -177,7 +177,7 @@
 }
 
 
-- (void)testTapGestureHandlerSetsUserTrackingModeFollow {
+- (void)testMapTappedSetsMapViewUserTrackingModeFollow {
     
     id mockMapView = [OCMockObject mockForClass:[MKMapView class]];
     self.viewController.mapView = mockMapView;
