@@ -52,6 +52,15 @@
 }
 
 
+// viewDidUnload is deprecated in iOS 6.
+// For purpose of learning unit test partial mock with "reject", implement viewDidUnload.
+// For more info see ViewControllerTests testNotificationHandlerNotCalled.
+- (void)viewDidUnload {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super viewDidUnload];
+}
+
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

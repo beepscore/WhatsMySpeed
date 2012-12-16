@@ -94,6 +94,8 @@
 }
 
 
+#pragma mark - Notificiation tests
+
 - (void)testLocationChangeNotificationUpdatesSpeed {
     
     id mockLocation = [OCMockObject mockForClass:[Location class]];
@@ -116,7 +118,7 @@
 }
 
 
-- (void)testThatNotificationHandlerCalled {
+- (void)testNotificationHandlerCalled {
     // If NSNotificationCenter wasn't a singleton, we could mock it and
     // have the mock expect a call to addObserver:selector:name:object: when the viewController registers.
     // However, NSNotificationCenter is a singleton and it's difficult to mock it.
@@ -134,6 +136,38 @@
     [[mockViewController expect] handleLocationChange:[OCMArg any]];
     
     [mockViewController viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationChange"
+                                                        object:nil];
+    
+    // Verify all stubbed or expected methods were called.
+    [mockViewController verify];
+}
+
+
+- (void)testNotificationHandlerNotCalled {
+    
+    id mockViewController = [OCMockObject
+                             partialMockForObject:self.viewController];
+    
+    // If we simply did not "expect" a call to handleLocationChange,
+    // and then verified, a full mock could verify handleLocationChange: was not called.
+    // However, mockViewController is a partial mock.
+    // It would pass a non-expected call through to the base ViewController.
+    // So instead use "reject", then verify.
+    [[mockViewController reject] handleLocationChange:[OCMArg any]];
+    
+    // viewController will register for notification
+    [mockViewController viewDidLoad];
+    
+    // viewController will removes itself as oberver.
+    // The video shows call [mockViewController viewDidUnload]
+    // However viewDidUnload is deprecated, so I implemented removeOberver in dealloc.
+    // ARC forbids calling dealloc such as [mockViewController dealloc]
+    // http://stackoverflow.com/questions/5816929/how-can-i-write-a-unit-test-that-checks-that-my-properties-are-released-in-dealla
+    // So this test is difficult to implement!
+    // For learning purposes, in ViewController implement viewDidUnload to call remove observer.
+    [mockViewController viewDidUnload];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LocationChange"
                                                         object:nil];
