@@ -102,7 +102,7 @@
     
     id notificationMock = [OCMockObject mockForClass:[NSNotification class]];
     
-    // Tell notificationMock to stub Notification method "object" and return the mockLocation
+    // Tell notificationMock to stub NSNotification method "object" and return the mockLocation
     [[[notificationMock stub] andReturn:(Location *)mockLocation] object];
     
     id labelMock = [OCMockObject mockForClass:[UILabel class]];
