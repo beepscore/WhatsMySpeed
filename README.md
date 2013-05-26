@@ -1,7 +1,7 @@
-﻿# Purpose:
+﻿# Purpose
 Do unit test exercises in Lynda.com tutorial.  
 
-# References:
+# References
 Unit Testing iOS Applications with Xcode 4 with Ron Lisle  
 <http://www.lynda.com/iOS-tutorials/Unit-Testing-iOS-Applications-Xcode/91949-2.html>
 
@@ -27,7 +27,7 @@ Xcode 4: Run tests from the command line (xcodebuild)?
 See answer by InsertWittyName
 <http://stackoverflow.com/questions/2739130/how-can-i-use-ocmock-to-verify-that-a-method-is-never-called?rq=1>
 
-# Results:
+# Results
 The project code is based on code copyright Lynda.com.
 
 ## Logic Tests vs Application Tests
