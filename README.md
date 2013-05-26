@@ -5,7 +5,9 @@ Do unit test exercises in Lynda.com tutorial.
 Unit Testing iOS Applications with Xcode 4 with Ron Lisle  
 <http://www.lynda.com/iOS-tutorials/Unit-Testing-iOS-Applications-Xcode/91949-2.html>
 
-Ron Lisle rewrote this project WhatsMySpeed, renaming it HowsMyFuel and using AppCode 2.0 and Kiwi.
+Ron Lisle rewrote this project WhatsMySpeed, renaming it HowsMyFuel.
+HowsMyFuel first used AppCode 2.0 and Kiwi.
+Then he rewrote it to use OCMockito and OCHamcrest.
 http://lisles.net/appcode-2-0-released/
 https://github.com/rlisle/HowsMyFuel
 
